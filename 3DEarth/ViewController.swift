@@ -128,5 +128,12 @@ extension ViewController: LocationPermissionsDelegate {
             self.setInitialCameraPosition(with: locationManager)
         })
     }
+    
+    func locationManager(_ locationManager: LocationManager, didFailToLocateUserWithError error: Error) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
+            guard let self = self else { return }
+            self.setInitialCameraPosition(with: locationManager)
+        })
+    }
 }
 
