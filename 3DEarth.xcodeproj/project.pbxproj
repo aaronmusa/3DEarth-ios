@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		1E6ED20A2A374AA90014709F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6ED2082A374AA90014709F /* Main.storyboard */; };
 		1E6ED20C2A374AAB0014709F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6ED20B2A374AAB0014709F /* Assets.xcassets */; };
 		1E6ED20F2A374AAB0014709F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6ED20D2A374AAB0014709F /* LaunchScreen.storyboard */; };
+		1EE896B32A38D879006135AB /* AppSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE896B22A38D879006135AB /* AppSecret.swift */; };
+		5D46142DCE045B670DDF424C /* Pods_3DEarth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CBCF16BBFA351769C4E855 /* Pods_3DEarth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		1E6ED20B2A374AAB0014709F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E6ED20E2A374AAB0014709F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E6ED2102A374AAB0014709F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E847810E2A115B819D2D4D8 /* Pods-3DEarth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3DEarth.release.xcconfig"; path = "Target Support Files/Pods-3DEarth/Pods-3DEarth.release.xcconfig"; sourceTree = "<group>"; };
+		1EE896B22A38D879006135AB /* AppSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSecret.swift; sourceTree = "<group>"; };
+		96CBCF16BBFA351769C4E855 /* Pods_3DEarth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_3DEarth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD2FD3C87A098E4F6EB1E671 /* Pods-3DEarth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3DEarth.debug.xcconfig"; path = "Target Support Files/Pods-3DEarth/Pods-3DEarth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D46142DCE045B670DDF424C /* Pods_3DEarth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				1E6ED2012A374AA90014709F /* 3DEarth */,
 				1E6ED2002A374AA90014709F /* Products */,
+				F0CA4AFE2E506C0F2287BC93 /* Pods */,
+				D62090CAAD65051D413B2A2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +65,7 @@
 		1E6ED2012A374AA90014709F /* 3DEarth */ = {
 			isa = PBXGroup;
 			children = (
+				1EE896B22A38D879006135AB /* AppSecret.swift */,
 				1E6ED2022A374AA90014709F /* AppDelegate.swift */,
 				1E6ED2042A374AA90014709F /* SceneDelegate.swift */,
 				1E6ED2062A374AA90014709F /* ViewController.swift */,
@@ -67,6 +77,23 @@
 			path = 3DEarth;
 			sourceTree = "<group>";
 		};
+		D62090CAAD65051D413B2A2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96CBCF16BBFA351769C4E855 /* Pods_3DEarth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0CA4AFE2E506C0F2287BC93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD2FD3C87A098E4F6EB1E671 /* Pods-3DEarth.debug.xcconfig */,
+				1E847810E2A115B819D2D4D8 /* Pods-3DEarth.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E6ED2132A374AAB0014709F /* Build configuration list for PBXNativeTarget "3DEarth" */;
 			buildPhases = (
+				169F3FF0A5FDCE996F2C6D12 /* [CP] Check Pods Manifest.lock */,
 				1E6ED1FB2A374AA90014709F /* Sources */,
 				1E6ED1FC2A374AA90014709F /* Frameworks */,
 				1E6ED1FD2A374AA90014709F /* Resources */,
+				26BCD54FE26192C70BDF7D86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +132,7 @@
 				};
 			};
 			buildConfigurationList = 1E6ED1FA2A374AA90014709F /* Build configuration list for PBXProject "3DEarth" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -133,12 +162,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		169F3FF0A5FDCE996F2C6D12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-3DEarth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26BCD54FE26192C70BDF7D86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-3DEarth/Pods-3DEarth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-3DEarth/Pods-3DEarth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-3DEarth/Pods-3DEarth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1E6ED1FB2A374AA90014709F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1E6ED2072A374AA90014709F /* ViewController.swift in Sources */,
+				1EE896B32A38D879006135AB /* AppSecret.swift in Sources */,
 				1E6ED2032A374AA90014709F /* AppDelegate.swift in Sources */,
 				1E6ED2052A374AA90014709F /* SceneDelegate.swift in Sources */,
 			);
@@ -216,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +354,7 @@
 		};
 		1E6ED2142A374AAB0014709F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD2FD3C87A098E4F6EB1E671 /* Pods-3DEarth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +368,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +384,7 @@
 		};
 		1E6ED2152A374AAB0014709F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E847810E2A115B819D2D4D8 /* Pods-3DEarth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +398,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

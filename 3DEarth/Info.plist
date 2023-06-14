@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>CustomKey</key>
+		<string>We temporarily require your precise location for an optimal experience.</string>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your precise location is used to calculate turn-by-turn directions, show your location on the map, and help improve the map.</string>
+	<key>MBXAccessToken</key>
+	<string>sk.eyJ1IjoiYWFyb25tdXNhIiwiYSI6ImNsaXNsdHhrMzFlY24zcW9jbXQzZGt6ejgifQ.Ier_PdPU4xNyig24gkev7Q</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
