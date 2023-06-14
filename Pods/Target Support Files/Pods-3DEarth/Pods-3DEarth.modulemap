@@ -1,6 +1,0 @@
-framework module Pods_3DEarth {
-  umbrella header "Pods-3DEarth-umbrella.h"
-
-  export *
-  module * { export * }
-}
