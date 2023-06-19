@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreLocation
 @_spi(Experimental) import MapboxMaps
 
 class ViewController: UIViewController {
+    
+    var locationManager: CLLocationManager!
     
     @IBOutlet private(set) var resetCameraButton: UIButton! {
         didSet {
@@ -36,6 +39,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupMap()
+        setAnnotations()
+    }
+    
+    func requestLocationAccess() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func didTapResetCamera() {
@@ -62,7 +73,6 @@ extension ViewController {
         view.addSubview(mapView)
         view.bringSubviewToFront(resetCameraButton)
         
-        mapView.location.delegate = self
         mapView.location.options.puckType = .puck2D()
         
         try? mapView.mapboxMap.setMapProjection(.globe())
@@ -74,26 +84,14 @@ extension ViewController {
         mapView.mapboxMap.onNext(.mapLoaded, handler: { [weak self] _ in
             guard let self = self else { return }
 
-            self.requestLocationPermission()
+            self.requestLocationAccess()
         })
     }
     
-    func setInitialCameraPosition(with locationManager: LocationManager) {
-        let coordinates = locationManager.latestLocation?.coordinate ?? defaultCameraState.center
+    func setInitialCameraPosition(with coordinate: CLLocationCoordinate2D?) {
+        let coordinate = coordinate ?? defaultCameraState.center
         resetCameraButton.isHidden = false
-        setAnnotations()
-        setCamera(to: coordinates)
-    }
-    
-    func requestLocationPermission() {
-        guard let latestLocation = mapView.location.latestLocation else {
-            mapView.location.requestTemporaryFullAccuracyPermissions(withPurposeKey: "CustomKey")
-            return
-        }
-        
-        resetCameraButton.isHidden = false
-        setAnnotations()
-        setCamera(to: latestLocation.coordinate)
+        setCamera(to: coordinate)
     }
     
     func setCamera(
@@ -118,22 +116,30 @@ extension ViewController {
         let manager = mapView.annotations.makePointAnnotationManager()
         manager.annotations = annotations
     }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(.init(title: "Dismiss", style: .cancel))
+        
+        present(alert, animated: true)
+    }
 }
 
-
-extension ViewController: LocationPermissionsDelegate {
-    func locationManager(_ locationManager: LocationManager, didChangeAccuracyAuthorization accuracyAuthorization: CLAccuracyAuthorization) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
-            guard let self = self else { return }
-            self.setInitialCameraPosition(with: locationManager)
-        })
+extension ViewController: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            setInitialCameraPosition(with: manager.location?.coordinate)
+        case .denied, .restricted:
+            showAlert(message: "Allow location access in Settings")
+        case .notDetermined: break
+        @unknown default: break
+        }
     }
     
-    func locationManager(_ locationManager: LocationManager, didFailToLocateUserWithError error: Error) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
-            guard let self = self else { return }
-            self.setInitialCameraPosition(with: locationManager)
-        })
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let currentLocation = locations.last
+        setInitialCameraPosition(with: currentLocation?.coordinate)
     }
 }
 
